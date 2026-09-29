@@ -29,6 +29,7 @@ body {
 
   min-height: 100vh;
 }
+
 /* ================================
    HEADER
 ================================ */
@@ -62,6 +63,7 @@ header img {
 header img:hover {
   transform: scale(1.1);
 }
+
 /* ================================
    NAVEGACIÓN
 ================================ */
@@ -84,12 +86,17 @@ nav ul {
 }
 
 nav a {
+  display: block;
+
   width: 15vw;
 
   margin: 8px;
   padding: 8px;
 
+  text-align: center;
   text-decoration: none;
+
+  color: #ffffff;
 
   background-color: #003b70;
 
@@ -100,18 +107,16 @@ nav a {
   transition: all 0.9s ease;
 }
 
-nav ul a li {
-  text-align: center;
-  color: #ffffff;
-}
-
 nav a:hover {
+  color: #ffffff;
+
   background-color: #002b52;
 
   transform: scale(1.08);
 
   border-radius: 8px;
 }
+
 /* ================================
    CONTENIDO PRINCIPAL
 ================================ */
@@ -143,6 +148,7 @@ article img {
   width: 70%;
   height: auto;
 }
+
 /* ================================
    TABLAS 
 ================================ */
@@ -165,6 +171,7 @@ td {
 
   text-align: center;
 }
+
 /* ================================
    ASIDE
 ================================ */
@@ -178,6 +185,7 @@ aside {
 
   background-color: #80a8c8;
 }
+
 /* ================================
    FOOTER
 ================================ */
@@ -223,6 +231,7 @@ footer a:hover {
 
   text-decoration: underline;
 }
+
 /* ================================
    DISEÑO RESPONSIVE
 ================================ */
