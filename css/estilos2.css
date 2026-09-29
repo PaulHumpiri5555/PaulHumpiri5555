@@ -13,14 +13,6 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* ================================
-   ESTRUCTURA HTML5
-   header
-   nav
-   main (section > article) + aside
-   footer
-================================ */
-
 body {
   margin: 1px;
   display: grid;
@@ -37,8 +29,6 @@ body {
 
   min-height: 100vh;
 }
-
-
 /* ================================
    HEADER
 ================================ */
@@ -72,8 +62,6 @@ header img {
 header img:hover {
   transform: scale(1.1);
 }
-
-
 /* ================================
    NAVEGACIÓN
 ================================ */
@@ -95,15 +83,13 @@ nav ul {
   list-style: none;
 }
 
-/* enlace vacío que genera el navegador por el <a><li></a> mal anidado */
-nav ul > a {
-  display: none;
-}
-
-nav li {
+nav a {
   width: 15vw;
 
   margin: 8px;
+  padding: 8px;
+
+  text-decoration: none;
 
   background-color: #003b70;
 
@@ -114,29 +100,20 @@ nav li {
   transition: all 0.9s ease;
 }
 
-nav li a {
-  display: block;
-
-  padding: 8px;
-
+nav ul a li {
   text-align: center;
-  text-decoration: none;
-
   color: #ffffff;
 }
 
-nav li:hover {
+nav a:hover {
   background-color: #002b52;
 
   transform: scale(1.08);
 
   border-radius: 8px;
 }
-
-
 /* ================================
    CONTENIDO PRINCIPAL
-   (section con sus article)
 ================================ */
 
 main {
@@ -166,10 +143,8 @@ article img {
   width: 70%;
   height: auto;
 }
-
-
 /* ================================
-   TABLAS (terceraPagina.html)
+   TABLAS 
 ================================ */
 
 table {
@@ -190,8 +165,6 @@ td {
 
   text-align: center;
 }
-
-
 /* ================================
    ASIDE
 ================================ */
@@ -205,8 +178,6 @@ aside {
 
   background-color: #80a8c8;
 }
-
-
 /* ================================
    FOOTER
 ================================ */
@@ -235,11 +206,6 @@ footer ul {
   list-style: none;
 }
 
-/* enlace vacío que genera el navegador por el <a><li></a> mal anidado */
-footer ul > a {
-  display: none;
-}
-
 footer a {
   padding: 20px;
 
@@ -257,8 +223,6 @@ footer a:hover {
 
   text-decoration: underline;
 }
-
-
 /* ================================
    DISEÑO RESPONSIVE
 ================================ */
@@ -292,7 +256,7 @@ footer a:hover {
     gap: 10px;
   }
 
-  nav li {
+  nav a {
     width: 90%;
   }
 
