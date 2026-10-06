@@ -16,6 +16,6 @@ function ejercicio02() {
   let area = largo * ancho;
   let perimetro = 2 * (largo + ancho);
   //Salida
-  alert("El area del terreno es de " + area + " m2");
+  alert("El area del terreno es de " + area + " m²");
   alert("El perimetro del terreno es de " + perimetro + " m");
 }
