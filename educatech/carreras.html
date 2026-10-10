@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carreras | EducaTech Coding Academy</title>
+    <meta name="description" content="Carreras técnicas en tecnología." />
+    <link rel="icon" href="images/logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estiloEducaTech.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top" aria-label="Navegación principal">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="EducaTech Coding Academy, inicio" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul id="menu" class="navbar-nav navbar-collapse collapse justify-content-lg-end align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link active" href="carreras.html" aria-current="page">Carreras</a></li>
+          <li class="nav-item"><a class="nav-link" href="admision.html">Admisión</a></li>
+          <li class="nav-item"><a class="nav-link" href="inscripcion.html">Inscripción</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html">Página principal</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-edu" href="inscripcion.html">Inscríbete</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="page-head">
+        <h1>Carreras</h1>
+        <p>Programas técnicos de 4 a 6 semestres con enfoque práctico. Filtra por área y elige la tuya.</p>
+      </section>
+
+      <section class="bloque">
+        <nav class="mb-4" aria-label="Filtrar por área">
+          <button class="btn btn-edu me-2 mb-2" data-filtro onclick="filtrar('todas', this)">Todas</button>
+          <button class="btn btn-outline-success me-2 mb-2" data-filtro onclick="filtrar('software', this)">Software y diseño</button>
+          <button class="btn btn-outline-success me-2 mb-2" data-filtro onclick="filtrar('redes', this)">Redes y seguridad</button>
+          <button class="btn btn-outline-success mb-2" data-filtro onclick="filtrar('datos', this)">Datos y robótica</button>
+        </nav>
+        <ul class="row g-4 list-unstyled mb-0">
+          <li data-area="software" class="col-md-6 col-lg-4">
+            <article class="tarjeta">
+              <h3 class="h4">Desarrollo de Software</h3>
+              <p class="small text-secondary mb-2">6 semestres</p>
+              <p>Aprende a diseñar, programar y desplegar aplicaciones web y móviles.</p>
+              <p class="mb-0">
+                <span class="etiqueta">JavaScript</span><span class="etiqueta">Python</span><span class="etiqueta">Bases de datos</span><span class="etiqueta">Git</span>
+              </p>
+              <p class="mt-3 mb-0"><a href="inscripcion.html?carrera=Desarrollo%20de%20Software">Postular a esta carrera</a></p>
+            </article>
+          </li>
+          <li data-area="redes" class="col-md-6 col-lg-4">
+            <article class="tarjeta">
+              <h3 class="h4">Ciberseguridad</h3>
+              <p class="small text-secondary mb-2">6 semestres</p>
+              <p>Protege sistemas y datos: redes seguras, análisis de vulnerabilidades y respuesta a incidentes.</p>
+              <p class="mb-0">
+                <span class="etiqueta">Redes</span><span class="etiqueta">Linux</span><span class="etiqueta">Hacking ético</span>
+              </p>
+              <p class="mt-3 mb-0"><a href="inscripcion.html?carrera=Ciberseguridad">Postular a esta carrera</a></p>
+            </article>
+          </li>
+          <li data-area="datos" class="col-md-6 col-lg-4">
+            <article class="tarjeta">
+              <h3 class="h4">Análisis de Datos e IA</h3>
+              <p class="small text-secondary mb-2">6 semestres</p>
+              <p>Convierte datos en decisiones con estadística, visualización y aprendizaje automático.</p>
+              <p class="mb-0">
+                <span class="etiqueta">Python</span><span class="etiqueta">SQL</span><span class="etiqueta">Machine Learning</span>
+              </p>
+              <p class="mt-3 mb-0"><a href="inscripcion.html?carrera=An%C3%A1lisis%20de%20Datos%20e%20IA">Postular a esta carrera</a></p>
+            </article>
+          </li>
+          <li data-area="software" class="col-md-6 col-lg-4">
+            <article class="tarjeta">
+              <h3 class="h4">Diseño UX/UI y Web</h3>
+              <p class="small text-secondary mb-2">4 semestres</p>
+              <p>Diseña interfaces claras y accesibles, y llévalas a código con HTML, CSS y JavaScript.</p>
+              <p class="mb-0">
+                <span class="etiqueta">Figma</span><span class="etiqueta">HTML/CSS</span><span class="etiqueta">Accesibilidad</span>
+              </p>
+              <p class="mt-3 mb-0"><a href="inscripcion.html?carrera=Dise%C3%B1o%20UX%2FUI%20y%20Web">Postular a esta carrera</a></p>
+            </article>
+          </li>
+          <li data-area="redes" class="col-md-6 col-lg-4">
+            <article class="tarjeta">
+              <h3 class="h4">Redes y Cloud Computing</h3>
+              <p class="small text-secondary mb-2">6 semestres</p>
+              <p>Administra infraestructura de redes y servicios en la nube.</p>
+              <p class="mb-0">
+                <span class="etiqueta">Cisco</span><span class="etiqueta">AWS</span><span class="etiqueta">Virtualización</span>
+              </p>
+              <p class="mt-3 mb-0"><a href="inscripcion.html?carrera=Redes%20y%20Cloud%20Computing">Postular a esta carrera</a></p>
+            </article>
+          </li>
+          <li data-area="datos" class="col-md-6 col-lg-4">
+            <article class="tarjeta">
+              <h3 class="h4">Robótica e IoT</h3>
+              <p class="small text-secondary mb-2">4 semestres</p>
+              <p>Construye dispositivos conectados con sensores, microcontroladores y automatización.</p>
+              <p class="mb-0">
+                <span class="etiqueta">Arduino</span><span class="etiqueta">Sensores</span><span class="etiqueta">Electrónica</span>
+              </p>
+              <p class="mt-3 mb-0"><a href="inscripcion.html?carrera=Rob%C3%B3tica%20e%20IoT">Postular a esta carrera</a></p>
+            </article>
+          </li>
+        </ul>
+      </section>
+
+      <section class="bloque bg-menta">
+        <table class="table table-striped">
+          <caption>Resumen de carreras</caption>
+          <thead>
+            <tr>
+              <th>Carrera</th>
+              <th>Área</th>
+              <th>Duración</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Desarrollo de Software</td>
+              <td>Software y diseño</td>
+              <td>6 semestres</td>
+            </tr>
+            <tr>
+              <td>Ciberseguridad</td>
+              <td>Redes y seguridad</td>
+              <td>6 semestres</td>
+            </tr>
+            <tr>
+              <td>Análisis de Datos e IA</td>
+              <td>Datos y robótica</td>
+              <td>6 semestres</td>
+            </tr>
+            <tr>
+              <td>Diseño UX/UI y Web</td>
+              <td>Software y diseño</td>
+              <td>4 semestres</td>
+            </tr>
+            <tr>
+              <td>Redes y Cloud Computing</td>
+              <td>Redes y seguridad</td>
+              <td>6 semestres</td>
+            </tr>
+            <tr>
+              <td>Robótica e IoT</td>
+              <td>Datos y robótica</td>
+              <td>4 semestres</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <section class="row g-4">
+        <article class="col-md-4">
+          <img src="images/logo.png" alt="EducaTech" height="70" class="bg-white rounded p-1 mb-3" />
+          <p>Instituto tecnológico que forma profesionales listos para el mercado digital.</p>
+        </article>
+        <nav class="col-6 col-md-2" aria-label="Páginas">
+          <h5>Páginas</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="carreras.html">Carreras</a></li>
+            <li><a href="admision.html">Admisión</a></li>
+            <li><a href="inscripcion.html">Inscripción</a></li>
+          </ul>
+        </nav>
+        <nav class="col-6 col-md-3" aria-label="Enlaces de interés">
+          <h5>Enlaces de Interés</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://github.com/PaulHumpiri5555/PaulHumpiri5555" target="_blank">Mi Repositorio</a></li>
+            <li><a href="../tetris.html">Jugar Tetris</a></li>
+            <li><a href="../index.html">Página Principal</a></li>
+          </ul>
+        </nav>
+        <address class="col-12 col-md-3">
+          <h5>Contacto</h5>
+          Jr. Lima 450, Puno<br />
+          (051) 365-000<br />
+          <a href="mailto:admision@educatech.edu.pe">admision@educatech.edu.pe</a><br />
+          Lun–Sáb, 8:00 a 18:00
+        </address>
+      </section>
+      <hr />
+      <small>© 2026 EducaTech Coding Academy.</small>
+    </footer>
+
+    <button id="botonSubir" class="btn btn-edu" onclick="volverArriba()" aria-label="Volver arriba">↑</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/general.js"></script>
+    <script src="js/carreras.js"></script>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inscripción | EducaTech Coding Academy</title>
+    <meta name="description" content="Formulario de inscripción en línea." />
+    <link rel="icon" href="images/logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estiloEducaTech.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top" aria-label="Navegación principal">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="EducaTech Coding Academy, inicio" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul id="menu" class="navbar-nav navbar-collapse collapse justify-content-lg-end align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="carreras.html">Carreras</a></li>
+          <li class="nav-item"><a class="nav-link" href="admision.html">Admisión</a></li>
+          <li class="nav-item"><a class="nav-link active" href="inscripcion.html" aria-current="page">Inscripción</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html">Página principal</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-edu" href="inscripcion.html">Inscríbete</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-head">
+        <h1>Formulario de inscripción</h1>
+        <p>Completa tus datos. Los campos con * son obligatorios.</p>
+      </section>
+
+      <section class="bloque">
+        <form id="formInscripcion" method="post" action="/api/inscripcion" novalidate>
+          <fieldset class="form-section">
+            <legend>Datos personales</legend>
+            <ul class="row g-3 list-unstyled mb-0">
+              <li class="col-md-6">
+                <label class="form-label" for="nombres">Nombres *</label>
+                <input class="form-control" type="text" id="nombres" name="nombres" required autocomplete="given-name" minlength="2" />
+                <small class="invalid-feedback">Ingresa tus nombres (mínimo 2 letras).</small>
+              </li>
+              <li class="col-md-6">
+                <label class="form-label" for="apellidos">Apellidos *</label>
+                <input class="form-control" type="text" id="apellidos" name="apellidos" required autocomplete="family-name" minlength="2" />
+                <small class="invalid-feedback">Ingresa tus apellidos.</small>
+              </li>
+              <li class="col-md-6">
+                <label class="form-label" for="dni">DNI *</label>
+                <input class="form-control" type="text" id="dni" name="dni" required inputmode="numeric" maxlength="8" placeholder="8 dígitos" />
+                <small class="invalid-feedback">El DNI debe tener 8 números.</small>
+              </li>
+              <li class="col-md-6">
+                <label class="form-label" for="nacimiento">Fecha de nacimiento *</label>
+                <input class="form-control" type="date" id="nacimiento" name="nacimiento" required />
+                <small class="invalid-feedback">Debes tener al menos 18 años.</small>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Contacto</legend>
+            <ul class="row g-3 list-unstyled mb-0">
+              <li class="col-md-6">
+                <label class="form-label" for="correo">Correo electrónico *</label>
+                <input class="form-control" type="email" id="correo" name="correo" required autocomplete="email" placeholder="tu@correo.com" />
+                <small class="invalid-feedback">Ingresa un correo válido, por ejemplo nombre@correo.com.</small>
+              </li>
+              <li class="col-md-6">
+                <label class="form-label" for="celular">Celular *</label>
+                <input class="form-control" type="tel" id="celular" name="celular" required inputmode="numeric" maxlength="9" placeholder="9XXXXXXXX" />
+                <small class="invalid-feedback">El celular debe tener 9 dígitos y empezar con 9.</small>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Programa de estudios</legend>
+            <ul class="row g-3 list-unstyled mb-0">
+              <li class="col-md-6">
+                <label class="form-label" for="carrera">Carrera *</label>
+                <select class="form-select" id="carrera" name="carrera" required>
+                  <option value="">Selecciona una carrera</option>
+                  <option>Desarrollo de Software</option>
+                  <option>Ciberseguridad</option>
+                  <option>Análisis de Datos e IA</option>
+                  <option>Diseño UX/UI y Web</option>
+                  <option>Redes y Cloud Computing</option>
+                  <option>Robótica e IoT</option>
+                </select>
+                <small class="invalid-feedback">Elige una carrera.</small>
+              </li>
+              <li class="col-md-6">
+                <label class="form-label" for="turno">Turno *</label>
+                <select class="form-select" id="turno" name="turno" required>
+                  <option value="">Selecciona un turno</option>
+                  <option>Mañana</option>
+                  <option>Tarde</option>
+                  <option>Noche</option>
+                </select>
+                <small class="invalid-feedback">Elige un turno.</small>
+              </li>
+              <li class="col-12">
+                <label class="form-label" for="motivo">¿Por qué quieres estudiar esta carrera?</label>
+                <textarea class="form-control" id="motivo" name="motivo" rows="3" maxlength="300"></textarea>
+                <small id="contador" class="form-text d-block text-end">0/300</small>
+              </li>
+            </ul>
+          </fieldset>
+
+          <label class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" name="terminos" required />
+            Acepto el uso de mis datos para el proceso de admisión. *
+            <small class="invalid-feedback">Debes aceptar para continuar.</small>
+          </label>
+
+          <button id="botonEnviar" class="btn btn-edu btn-lg" type="submit">Enviar inscripción</button>
+          <button class="btn btn-link" type="reset">Limpiar</button>
+        </form>
+      </section>
+
+      <dialog id="modalExito" aria-labelledby="tituloExito">
+        <h2 id="tituloExito" class="h4">Inscripción enviada</h2>
+        <p>Tu código de postulación es <strong id="codigo"></strong>. Guárdalo: lo pedirán en secretaría.</p>
+        <ul class="list-unstyled">
+          <li><strong>Postulante:</strong> <span id="resPostulante"></span></li>
+          <li><strong>DNI:</strong> <span id="resDni"></span></li>
+          <li><strong>Carrera:</strong> <span id="resCarrera"></span></li>
+          <li><strong>Turno:</strong> <span id="resTurno"></span></li>
+          <li><strong>Correo:</strong> <span id="resCorreo"></span></li>
+        </ul>
+        <p><small>Recibirás un correo con instrucciones.</small></p>
+        <form method="dialog">
+          <a class="btn btn-claro border" href="index.html">Volver al inicio</a>
+          <button class="btn btn-edu">Entendido</button>
+        </form>
+      </dialog>
+    </main>
+
+    <footer>
+      <section class="row g-4">
+        <article class="col-md-4">
+          <img src="images/logo.png" alt="EducaTech" height="70" class="bg-white rounded p-1 mb-3" />
+          <p>Instituto tecnológico que forma profesionales listos para el mercado digital.</p>
+        </article>
+        <nav class="col-6 col-md-2" aria-label="Páginas">
+          <h5>Páginas</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="carreras.html">Carreras</a></li>
+            <li><a href="admision.html">Admisión</a></li>
+            <li><a href="inscripcion.html">Inscripción</a></li>
+          </ul>
+        </nav>
+        <nav class="col-6 col-md-3" aria-label="Enlaces de interés">
+          <h5>Enlaces de Interés</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://github.com/PaulHumpiri5555/PaulHumpiri5555" target="_blank">Mi Repositorio</a></li>
+            <li><a href="../tetris.html">Jugar Tetris</a></li>
+            <li><a href="../index.html">Página Principal</a></li>
+          </ul>
+        </nav>
+        <address class="col-12 col-md-3">
+          <h5>Contacto</h5>
+          Jr. Lima 450, Puno<br />
+          (051) 365-000<br />
+          <a href="mailto:admision@educatech.edu.pe">admision@educatech.edu.pe</a><br />
+          Lun–Sáb, 8:00 a 18:00
+        </address>
+      </section>
+      <hr />
+      <small>© 2026 EducaTech Coding Academy.</small>
+    </footer>
+
+    <button id="botonSubir" class="btn btn-edu" onclick="volverArriba()" aria-label="Volver arriba">↑</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/general.js"></script>
+    <script src="js/formulario.js"></script>
+  </body>
+</html>

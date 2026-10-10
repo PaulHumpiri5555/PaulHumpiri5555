@@ -1,0 +1,467 @@
+/*
+#0B4D2E verde oscuro
+#0F9D58 verde principal
+#E6F5EC verde claro (fondos)
+#7A2230 ladrillo (detalle de la fachada)
+#16241C texto
+#07301C footer
+*/
+
+:root {
+  --verde-oscuro: #0b4d2e;
+  --verde: #0f9d58;
+  --menta: #e6f5ec;
+  --ladrillo: #7a2230;
+  --tinta: #16241c;
+
+  /* margen lateral que centra el contenido a 1140px */
+  --lado: max(1rem, calc((100% - 1140px) / 2));
+}
+
+
+/* ================================
+  BODY 
+================================ */
+
+body {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto auto;
+
+  grid-template-areas:
+    "header"
+    "main"
+    "aside"
+    "footer";
+
+  min-height: 100vh;
+  padding-top: 76px;
+
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+
+  color: var(--tinta);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.navbar-brand {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+
+  color: var(--verde-oscuro);
+}
+
+a {
+  color: var(--verde);
+}
+
+:focus-visible {
+  outline: 3px solid var(--ladrillo);
+  outline-offset: 2px;
+}
+
+
+/* ================================
+   HEADER Y NAVEGACIÓN
+================================ */
+
+header {
+  grid-area: header;
+}
+
+.navbar {
+  padding-inline: var(--lado);
+
+  background-color: #ffffff;
+  box-shadow: 0 1px 0 #dfe8e2;
+}
+
+.navbar img {
+  height: 48px;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem !important;
+
+  font-weight: 600;
+  color: var(--tinta) !important;
+}
+
+.nav-link.active {
+  color: var(--verde) !important;
+  border-bottom: 3px solid var(--verde);
+}
+
+
+/* ================================
+   BOTONES
+================================ */
+
+.btn-edu {
+  padding: 0.7rem 1.5rem;
+
+  font-weight: 700;
+  color: #ffffff;
+
+  background-color: var(--verde);
+  border: 0;
+  border-radius: 0.5rem;
+}
+
+.btn-edu:hover {
+  color: #ffffff;
+  background-color: var(--verde-oscuro);
+}
+
+.btn-claro {
+  padding: 0.7rem 1.5rem;
+
+  font-weight: 700;
+  color: var(--verde-oscuro);
+
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+}
+
+.btn-claro:hover {
+  background-color: var(--menta);
+}
+
+#botonSubir {
+  display: none;
+
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 9;
+}
+
+
+/* ================================
+   CONTENIDO PRINCIPAL
+================================ */
+
+main {
+  grid-area: main;
+}
+
+.bloque {
+  padding-block: 4.5rem;
+  padding-inline: var(--lado);
+}
+
+.bg-menta {
+  background-color: var(--menta);
+}
+
+.texto-corto {
+  max-width: 55ch;
+}
+
+.foto {
+  width: 100%;
+  height: 350px;
+
+  object-fit: cover;
+  border-radius: 0.4rem;
+}
+
+/* ================================
+   Portada
+================================ */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  min-height: 78vh;
+  padding-bottom: 3rem;
+  padding-inline: var(--lado);
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(90deg, rgba(7, 48, 28, 0.92) 15%, rgba(7, 48, 28, 0.2)),
+    url(../images/fachada.png) center / cover;
+}
+
+.hero h1 {
+  max-width: 14ch;
+
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 1.02;
+
+  color: #ffffff;
+}
+
+.hero p {
+  max-width: 46ch;
+  margin-block: 1.5rem;
+
+  font-size: 1.2rem;
+}
+
+/* ================================
+   Título de cada página
+================================ */
+
+.page-head {
+  padding-block: 3.5rem;
+  padding-inline: var(--lado);
+
+  color: #ffffff;
+  background-color: var(--verde-oscuro);
+}
+
+.page-head h1 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+
+  color: #ffffff;
+}
+
+.page-head p {
+  max-width: 60ch;
+  margin: 0;
+
+  opacity: 0.9;
+}
+
+/* ================================
+   Cifras
+================================ */
+
+.cifras {
+  padding-block: 1.5rem;
+  padding-inline: var(--lado);
+
+  color: #ffffff;
+  background-color: var(--verde);
+}
+
+.cifras strong {
+  display: block;
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+/* ================================
+   Tarjetas
+================================ */
+
+.tarjeta {
+  height: 100%;
+  padding: 1.5rem;
+
+  background-color: #ffffff;
+  border: 1px solid #d5e4da;
+  border-left: 5px solid var(--verde);
+  border-radius: 0.4rem;
+
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(11, 77, 46, 0.12);
+}
+
+.tarjeta.ladrillo {
+  border-left-color: var(--ladrillo);
+}
+
+.etiqueta {
+  display: inline-block;
+
+  margin: 0 0.3rem 0.3rem 0;
+  padding: 0.15rem 0.7rem;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--verde-oscuro);
+
+  background-color: var(--menta);
+  border-radius: 2rem;
+}
+
+/* ================================
+   Pasos y línea de tiempo
+================================ */
+
+.pasos {
+  padding: 0;
+  list-style: none;
+  counter-reset: paso;
+}
+
+.pasos li {
+  display: flex;
+  gap: 1rem;
+
+  margin-bottom: 1.5rem;
+  counter-increment: paso;
+}
+
+.pasos li::before {
+  display: grid;
+  place-items: center;
+
+  flex: 0 0 3.2rem;
+  height: 3.2rem;
+
+  content: counter(paso);
+  font-size: 0.9rem;
+  color: #ffffff;
+
+  background-color: var(--verde-oscuro);
+  border-radius: 50%;
+}
+
+.historia li::before {
+  content: attr(data-anio);
+}
+
+/* ================================
+   Tabla y preguntas frecuentes
+================================ */
+
+.table thead th {
+  color: #ffffff;
+  background-color: var(--verde-oscuro);
+}
+
+.table caption {
+  caption-side: top;
+  font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--verde-oscuro);
+  background-color: var(--menta);
+}
+
+
+/* ================================
+   ASIDE
+================================ */
+
+aside {
+  grid-area: aside;
+}
+
+
+/* ================================
+   FORMULARIO
+================================ */
+
+#formInscripcion {
+  max-width: 860px;
+  margin: auto;
+}
+
+.form-section {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+
+  background-color: #ffffff;
+  border: 1px solid #d5e4da;
+  border-radius: 0.4rem;
+}
+
+.form-section legend {
+  float: none;
+  width: auto;
+  padding: 0 0.5rem;
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.form-label small,
+.form-check small {
+  font-weight: 400;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--verde);
+  box-shadow: 0 0 0 0.2rem rgba(15, 157, 88, 0.25);
+}
+
+dialog {
+  max-width: 480px;
+  padding: 1.5rem;
+
+  border: 0;
+  border-radius: 0.4rem;
+}
+
+dialog::backdrop {
+  background-color: rgba(7, 48, 28, 0.6);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  grid-area: footer;
+
+  padding-block: 3rem 1.5rem;
+  padding-inline: var(--lado);
+
+  color: #cfe3d6;
+  background-color: #07301c;
+}
+
+footer h5 {
+  color: #ffffff;
+}
+
+footer a {
+  color: #cfe3d6;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+
+/* ================================
+   DISEÑO RESPONSIVE
+================================ */
+
+@media (max-width: 992px) {
+  .foto {
+    height: 260px;
+  }
+
+  .bloque {
+    padding-block: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
